@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "randomspawn",
+	"version": "${version}",
+	"name": "RandomSpawn",
+	"description": "Spawn new players at random locations.",
+	"authors": [
+		"benbatikan"
+	],
+	"contact": {
+		"homepage": "https://maynkraft.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/randomspawn/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.maynkraft.randomspawn.RandomSpawn"
+		],
+		"client": [
+			"com.maynkraft.randomspawn.RandomSpawnClient"
+		]
+	},
+	"mixins": [
+		"randomspawn.mixins.json",
+		{
+			"config": "randomspawn.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.5",
+		"minecraft": "~26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
